@@ -1,0 +1,26 @@
+﻿@model LichTruc.Models.SCHEDULE
+
+@{
+    ViewBag.Title = "Sửa trạng thái lịch trực";
+}
+
+<h2>Sửa trạng thái lịch trực</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.schedule_id)
+
+    <div class="form-group">
+        <label>Trạng thái</label>
+        @Html.DropDownListFor(model => model.status, (SelectList)ViewBag.StatusList, new { @class = "form-control" })
+    </div>
+
+    <br />
+    <input type="submit" value="Lưu" class="btn btn-primary" />
+    @Html.ActionLink("Quay lại", "Index", "Home", null, new { @class = "btn btn-secondary" })
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+}

@@ -1,0 +1,58 @@
+﻿@model IEnumerable<LichTruc.Models.EMPLOYEE>
+@{
+    ViewBag.Title = "Danh sách bác sĩ";
+    var deptList = ViewBag.DeptList as SelectList;
+    string searchTerm = ViewBag.SearchTerm as string;
+}
+
+<h2>Danh sách bác sĩ</h2>
+
+<form method="get" action="@Url.Action("Index")" class="row mb-3">
+    <div class="col-md-3">
+        <label>Phòng ban:</label>
+        @Html.DropDownList("deptId", deptList, "-- Tất cả --", new { @class = "form-select" })
+    </div>
+    <div class="col-md-5">
+        <label>Tìm kiếm theo tên hoặc mã NV:</label>
+        <input type="text" name="searchTerm" value="@searchTerm" class="form-control" placeholder="Nhập tên hoặc mã nhân viên" />
+    </div>
+    <div class="col-md-2 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search"></i> Lọc</button>
+    </div>
+    <div class="col-md-2 d-flex align-items-end">
+        <a href="@Url.Action("Index")" class="btn btn-secondary w-100">Đặt lại</a>
+    </div>
+</form>
+
+<p>
+    <a class="btn btn-success" href="@Url.Action("Create")">Thêm bác sĩ</a>
+</p>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Mã NV</th>
+            <th>Họ tên</th>
+            <th>Chức vụ</th>
+            <th>Phòng ban</th>
+            <th>Đang hoạt động</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.emp_code</td>
+                <td>@item.full_name</td>
+                <td>@item.position</td>
+                <td>@(item.DEPARTMENT?.dept_name)</td>
+                <td>@(item.is_active == true ? "Có" : "Không")</td>
+                <td>
+                    <a class="btn btn-sm btn-warning" href="@Url.Action("Edit", new { id = item.emp_id })">Sửa</a>
+                    <a class="btn btn-sm btn-danger" href="@Url.Action("Delete", new { id = item.emp_id })" onclick="return confirm('Bạn có chắc muốn xóa?');">Xóa</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

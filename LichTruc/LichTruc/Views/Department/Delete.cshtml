@@ -1,0 +1,22 @@
+﻿@model LichTruc.Models.DEPARTMENT
+
+@{
+    ViewBag.Title = "Xóa phòng ban";
+}
+
+<h2>Bạn có chắc muốn xóa phòng ban này?</h2>
+
+<div>
+    <p><strong>Mã phòng:</strong> @Model.dept_code</p>
+    <p><strong>Tên phòng:</strong> @Model.dept_name</p>
+    <p><strong>Phòng cha:</strong> @Model.parent_dept_id</p>
+</div>
+
+@using (Html.BeginForm("Delete", "Department", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.dept_id)
+
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-secondary" })
+}

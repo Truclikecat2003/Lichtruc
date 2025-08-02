@@ -1,0 +1,321 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Hệ thống phân lịch trực</title>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --danger-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-bg);
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+            box-shadow: var(--shadow);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white !important;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .navbar-brand:hover {
+                color: #f8f9fa !important;
+                transform: scale(1.02);
+            }
+
+        .nav-link {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            margin: 0 0.25rem;
+        }
+
+            .nav-link:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: white !important;
+                transform: translateY(-1px);
+            }
+
+            .nav-link.active {
+                background-color: rgba(255, 255, 255, 0.2);
+                color: white !important;
+            }
+
+        .user-info {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            margin-right: 1rem;
+        }
+
+            .user-info .user-name {
+                font-weight: 600;
+                color: #f8f9fa;
+            }
+
+            .user-info .user-role {
+                font-size: 0.85rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+        .btn-logout {
+            background: var(--danger-color);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+            .btn-logout:hover {
+                background: #c0392b;
+                color: white;
+                transform: translateY(-1px);
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            }
+
+        .main-content {
+            padding: 2rem 0;
+            min-height: calc(100vh - 200px);
+        }
+
+        .dropdown-menu {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+            .dropdown-item:hover {
+                background-color: var(--light-bg);
+                color: var(--primary-color);
+            }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .navbar-toggler {
+            border: none;
+            padding: 0.25rem 0.5rem;
+        }
+
+            .navbar-toggler:focus {
+                box-shadow: none;
+            }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        .role-badge {
+            background: var(--success-color);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Mobile responsive styles */
+        @@media (max-width: 768px) {
+            .navbar-nav {
+                padding-top: 1rem;
+            }
+
+            .user-info {
+                margin: 0.5rem 0;
+            }
+
+            .btn-logout {
+                margin-top: 0.5rem;
+            }
+        }
+
+        /* Loading animation */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                <i class="bi bi-calendar-check me-2"></i>
+                Hệ thống lịch trực
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Menu chính -->
+                @if (Session["UserID"] != null)
+                {
+                    <ul class="navbar-nav me-auto">
+                        @if ((int)Session["RoleID"] == 1)
+                        {
+                            <!-- Menu cho SUPER_ADMIN -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                                    <i class="bi bi-gear-fill me-1"></i>
+                                    Quản lý hệ thống
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li>@Html.ActionLink("Quản lý lịch trực", "Index", "Home", null, new { @class = "dropdown-item" })</li>
+                                    <li>@Html.ActionLink("Quản lý bác sĩ", "Index", "Doctor", null, new { @class = "dropdown-item" })</li>
+                                    <li>@Html.ActionLink("Quản lý người dùng", "Index", "Role", null, new { @class = "dropdown-item" })</li>
+                                    <li>@Html.ActionLink("Quản lý phòng ban", "Index", "Department", null, new { @class = "dropdown-item" })</li>
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Menu cho người dùng thường -->
+                            <li class="nav-item">
+                                @Html.ActionLink("Lịch trực", "Index", "Home", null, new { @class = "nav-link active" })
+                            </li>
+                        }
+
+                    </ul>
+
+                    <!-- Thông tin người dùng -->
+                    <div class="d-flex align-items-center">
+                        <div class="user-info d-flex align-items-center">
+                            <div class="me-3">
+                                <i class="bi bi-person-circle fs-4"></i>
+                            </div>
+                            <div>
+                                <div class="user-name">@Session["FullName"]</div>
+                                <div class="user-role">
+                                    <span class="role-badge">@((int)Session["RoleID"] == 1 ? "ADMIN" : "USER")</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dropdown">
+                            <a class="btn btn-outline-light" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-three-dots-vertical"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-person me-2"></i>Thông tin cá nhân</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Cài đặt</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>@Html.ActionLink("Đăng xuất", "Logout", "Account", null, new { @class = "dropdown-item text-danger" })</li>
+                            </ul>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="container main-content" style="margin-top: 100px;">
+        @RenderBody()
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <p>&copy; @DateTime.Now.Year - Hệ thống phân lịch trực.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Phiên bản 1.0.0 | <a href="#" class="text-white">Hỗ trợ</a></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Auto-hide alerts after 5 seconds
+        setTimeout(() => {
+            const alerts = document.querySelectorAll('.alert');
+            alerts.forEach(alert => {
+                if (alert.classList.contains('alert-dismissible')) {
+                    alert.classList.add('fade');
+                    setTimeout(() => alert.remove(), 300);
+                }
+            });
+        }, 5000);
+
+        // Add active class to current nav item
+        const currentLocation = location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            if (link.getAttribute('href') === currentLocation) {
+                link.classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

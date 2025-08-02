@@ -1,0 +1,533 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|d:\\cacmonhoc\\hkiii\\tt\\lt2\\lichtruc\\lichtruc\\models\\data_lichtruc.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\models\\data_lichtruc.dbml||{B465B5AD-8799-4507-B90A-EE29ACF36AF9}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|d:\\cacmonhoc\\hkiii\\tt\\lt2\\lichtruc\\lichtruc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\printmultiple.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\printmultiple.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\controllers\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\models\\usercreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\models\\usercreateviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\models\\scheduleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\models\\scheduleviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\department\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\models\\scheduleentryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\models\\scheduleentryvm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\print.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\print.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\controllers\\rolecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\role\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\role\\createuser.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\role\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\doctor\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\doctor\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\controllers\\doctorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\doctor\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\editdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\editdetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\adddoctor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\adddoctor.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\schedule\\deletedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\schedule\\deletedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\role\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\views\\role\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\views\\role\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\lichtruc\\models\\roledetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA147D43-C121-4BD4-AEC5-CDE22B5D93BE}|LichTruc\\LichTruc.csproj|solutionrelative:lichtruc\\models\\roledetailsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "data_lichtruc.dbml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\data_lichtruc.dbml",
+              "RelativeDocumentMoniker": "LichTruc\\Models\\data_lichtruc.dbml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\data_lichtruc.dbml",
+              "RelativeToolTip": "LichTruc\\Models\\data_lichtruc.dbml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001722|",
+              "WhenOpened": "2025-08-02T02:33:23.688Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ScheduleController.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\ScheduleController.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Controllers\\ScheduleController.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\ScheduleController.cs",
+              "RelativeToolTip": "LichTruc\\Controllers\\ScheduleController.cs",
+              "ViewState": "AgIAAO0BAAAAAAAAAAAAwAECAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T05:46:46.36Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "LichTruc\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T06:03:10.952Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACUAAAAAAAAAAAAuwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T06:03:05.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Web.config",
+              "RelativeDocumentMoniker": "LichTruc\\Web.config",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Web.config",
+              "RelativeToolTip": "LichTruc\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-07-27T06:30:16.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T16:28:17.081Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PrintMultiple.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\PrintMultiple.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\PrintMultiple.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\PrintMultiple.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\PrintMultiple.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAswDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-25T04:57:00.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ScheduleViewModel.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\ScheduleViewModel.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Models\\ScheduleViewModel.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\ScheduleViewModel.cs",
+              "RelativeToolTip": "LichTruc\\Models\\ScheduleViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-25T05:30:51.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserCreateViewModel.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\UserCreateViewModel.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Models\\UserCreateViewModel.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\UserCreateViewModel.cs",
+              "RelativeToolTip": "LichTruc\\Models\\UserCreateViewModel.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAuwAsAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T05:37:45.08Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Details.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\Details.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Details.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\Details.cshtml",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAcwHsAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T17:19:04.839Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\Edit.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Edit.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\Edit.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T17:19:01.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "LichTruc\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAywBwAAABTAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T06:32:59.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Department\\Index.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Department\\Index.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Department\\Index.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Department\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-25T05:21:40.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ScheduleEntryVM.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\ScheduleEntryVM.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Models\\ScheduleEntryVM.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\ScheduleEntryVM.cs",
+              "RelativeToolTip": "LichTruc\\Models\\ScheduleEntryVM.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-22T05:14:55.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Create.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\Create.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Create.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\Create.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAswCQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T05:47:04.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Print.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Print.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\Print.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\Print.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\Print.cshtml",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAuwFEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-22T05:21:44.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\Edit.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Role\\Edit.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\Edit.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Role\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T17:40:04.578Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CreateUser.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\CreateUser.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Role\\CreateUser.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\CreateUser.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Role\\CreateUser.cshtml",
+              "ViewState": "AgIAACcAAAAAAAAAAAAswDwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-23T04:20:53.186Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "RoleController.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\RoleController.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Controllers\\RoleController.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\RoleController.cs",
+              "RelativeToolTip": "LichTruc\\Controllers\\RoleController.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAA3wKIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T05:38:07.592Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Doctor\\Create.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Doctor\\Create.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Doctor\\Create.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Doctor\\Create.cshtml",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAswCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-23T04:16:06.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EditDetail.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\EditDetail.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\EditDetail.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\EditDetail.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\EditDetail.cshtml",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAuwCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-22T19:39:53.82Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Doctor\\Index.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Doctor\\Index.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Doctor\\Index.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Doctor\\Index.cshtml",
+              "ViewState": "AgIAABgAAAAAAAAAAAAswDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-23T03:38:26.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DoctorController.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\DoctorController.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Controllers\\DoctorController.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Controllers\\DoctorController.cs",
+              "RelativeToolTip": "LichTruc\\Controllers\\DoctorController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAgwDsAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T03:38:32.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T16:32:10.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AddDoctor.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\AddDoctor.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\AddDoctor.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\AddDoctor.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\AddDoctor.cshtml",
+              "ViewState": "AgIAAHcAAAAAAAAAAAAswJkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-22T04:04:03.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "DeleteDetail.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\DeleteDetail.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Schedule\\DeleteDetail.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Schedule\\DeleteDetail.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Schedule\\DeleteDetail.cshtml",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAuwBwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-22T19:40:10.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "LichTruc\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "LichTruc\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T05:45:47.974Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\Index.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Role\\Index.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\Index.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Role\\Index.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAuwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T05:39:40.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\Details.cshtml",
+              "RelativeDocumentMoniker": "LichTruc\\Views\\Role\\Details.cshtml",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Views\\Role\\Details.cshtml",
+              "RelativeToolTip": "LichTruc\\Views\\Role\\Details.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-16T05:38:26.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "RoleDetailsViewModel.cs",
+              "DocumentMoniker": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\RoleDetailsViewModel.cs",
+              "RelativeDocumentMoniker": "LichTruc\\Models\\RoleDetailsViewModel.cs",
+              "ToolTip": "D:\\cacmonhoc\\HKIII\\TT\\LT2\\LichTruc\\LichTruc\\Models\\RoleDetailsViewModel.cs",
+              "RelativeToolTip": "LichTruc\\Models\\RoleDetailsViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-16T05:38:00.225Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

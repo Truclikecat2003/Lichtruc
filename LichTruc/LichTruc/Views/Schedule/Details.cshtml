@@ -1,0 +1,191 @@
+﻿@model IEnumerable<LichTruc.Models.SCHEDULE_DETAIL>
+@using System.Globalization
+@{
+    ViewBag.Title = "Chi tiết lịch trực (dạng ma trận)";
+    var schedule = ViewBag.Schedule as LichTruc.Models.SCHEDULE;
+    var employeeNames = ViewBag.EmployeeNames as Dictionary<int, string>;
+
+    var startDate = schedule.week_start_date;
+    var endDate = schedule.week_end_date;
+
+    var shiftList = new List<string> { "Sáng", "Chiều", "Tối", "Cả ngày" };
+
+    var days = Enumerable.Range(0, (endDate - startDate).Days + 1)
+                         .Select(offset => startDate.AddDays(offset))
+                         .ToList();
+
+    var groupedData = Model.GroupBy(d => new { d.duty_date, d.shift_time })
+                           .ToDictionary(
+                               g => g.Key,
+                               g => g.ToList()
+                           );
+
+    var roleId = Session["RoleID"] != null ? (int)Session["RoleID"] : 0;
+    var allowEdit = (schedule.status == "DRAFT" && (roleId == 1 || roleId == 2)) ||
+                    (schedule.status == "LOCKED" && roleId == 1);
+
+    var vi = new CultureInfo("vi-VN");
+}
+
+<h2>Chi tiết lịch trực - @schedule.week_start_date.ToShortDateString() đến @schedule.week_end_date.ToShortDateString()</h2>
+
+<p><strong>Phòng ban:</strong> @ViewBag.DepartmentName</p>
+<p><strong>Người tạo:</strong> @ViewBag.UserName</p>
+<p><strong>Trạng thái:</strong> @schedule.status</p>
+<p><strong>Ghi chú:</strong> @schedule.notes</p>
+
+<table class="table table-bordered text-center align-middle">
+    <thead class="table-light">
+        <tr>
+            <th>Ca trực</th>
+            @foreach (var day in days)
+            {
+                <th>@day.ToString("dd/MM (ddd)")</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var shift in shiftList)
+        {
+            <tr>
+                <td><strong>@shift</strong></td>
+                @foreach (var day in days)
+                {
+                    var key = new { duty_date = day, shift_time = shift };
+                    if (groupedData.ContainsKey(key))
+                    {
+                        var list = groupedData[key];
+                        <td>
+                            @foreach (var item in list)
+                            {
+                                <div class="mb-2 border-bottom pb-1">
+                                    <strong>
+                                        @(employeeNames != null && employeeNames.ContainsKey(item.emp_id)
+                                            ? employeeNames[item.emp_id]
+                                            : "Chưa phân công")
+                                    </strong>
+                                    <br />
+                                    <small class="text-muted">@item.duty_type</small>
+
+                                    @if (allowEdit)
+                                    {
+                                        <div class="mt-1">
+                                            <a href="@Url.Action("EditDetail", "Schedule", new { id = item.detail_id })"
+                                               class="btn btn-sm btn-warning me-1" title="Sửa">
+                                                <i class="bi bi-pencil"></i> Sửa
+                                            </a>
+                                            <a href="@Url.Action("DeleteDetail", "Schedule", new { id = item.detail_id })"
+                                               class="btn btn-sm btn-danger"
+                                               onclick="return confirm('Bạn có chắc muốn xóa ca trực này?');"
+                                               title="Xóa">
+                                                <i class="bi bi-trash"></i> Xóa
+                                            </a>
+                                        </div>
+                                    }
+                                </div>
+                            }
+                        </td>
+                    }
+                    else
+                    {
+                        <td><span class="text-muted">-</span></td>
+                    }
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+@if (allowEdit)
+{
+    <div class="mb-3 p-3 border rounded bg-light">
+        <h5><i class="bi bi-files"></i> Sao chép ca trực từ ngày khác</h5>
+        <form method="post" action="@Url.Action("CopyShiftAdvanced", "Schedule")" class="row gy-3">
+            <input type="hidden" name="schedule_id" value="@schedule.schedule_id" />
+
+            <div class="col-md-6">
+                <label><strong>Từ ngày:</strong></label>
+                <select name="sourceDate" class="form-select" required>
+                    @foreach (var day in days)
+                    {
+                        var display = vi.TextInfo.ToTitleCase(day.ToString("dd/MM/yyyy (dddd)", vi));
+                        <option value="@day.ToString("yyyy-MM-dd")">@display</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label><strong>Ca nguồn:</strong> <small class="text-muted">(có thể bỏ trống)</small></label>
+                <select name="sourceShift" class="form-select">
+                    <option value="">-- Chưa chọn ca --</option>
+                    @foreach (var shift in shiftList)
+                    {
+                        <option value="@shift">@shift</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label><strong>Đến ngày:</strong></label>
+                <select name="targetDate" class="form-select" required>
+                    @foreach (var day in days)
+                    {
+                        var display = vi.TextInfo.ToTitleCase(day.ToString("dd/MM/yyyy (dddd)", vi));
+                        <option value="@day.ToString("yyyy-MM-dd")">@display</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-6">
+                <label><strong>Ca đích:</strong> <small class="text-muted">(có thể bỏ trống)</small></label>
+                <select name="targetShift" class="form-select">
+                    <option value="">-- Chưa chọn ca --</option>
+                    @foreach (var shift in shiftList)
+                    {
+                        <option value="@shift">@shift</option>
+                    }
+                </select>
+            </div>
+
+            <div class="col-md-12">
+                <div class="form-check mt-2">
+                    <input type="checkbox" class="form-check-input" name="overwrite" id="overwrite" />
+                    <label class="form-check-label" for="overwrite">Ghi đè nếu trùng</label>
+                </div>
+            </div>
+
+            <div class="col-md-12 mt-3">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-copy"></i> Sao chép ca trực
+                </button>
+            </div>
+        </form>
+
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger mt-3">@TempData["Error"]</div>
+        }
+        else if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success mt-3">@TempData["Success"]</div>
+        }
+    </div>
+}
+
+
+<p>
+    @if (allowEdit)
+    {
+        <a class="btn btn-success" href="@Url.Action("AddDoctor", "Schedule", new { id = schedule.schedule_id })">
+            <i class="bi bi-plus-circle"></i> Thêm bác sĩ vào lịch
+        </a>
+    }
+
+    @if (roleId == 1 || roleId == 3)
+    {
+        <a class="btn btn-info ms-2" href="@Url.Action("Print", "Schedule", new { id = schedule.schedule_id })" target="_blank">
+            <i class="bi bi-printer"></i> In lịch trực
+        </a>
+    }
+</p>

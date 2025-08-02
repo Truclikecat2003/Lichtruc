@@ -1,0 +1,46 @@
+﻿@model LichTruc.Models.ViewModels.RoleDetailsViewModel
+
+@{
+    ViewBag.Title = "Chi tiết vai trò";
+}
+
+<h2>Vai trò: @Model.Role.role_name</h2>
+<p><strong>Mô tả:</strong> @Model.Role.role_description</p>
+
+<h4>Danh sách người dùng thuộc vai trò này:</h4>
+
+@if (Model.Users != null && Model.Users.Count > 0)
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Tên đăng nhập</th>
+                <th>Họ tên</th>
+                <th>Trạng thái</th>
+                <th>Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.username</td>
+                    <td>@(user.EMPLOYEE?.full_name ?? "Chưa gán")</td>
+                    <td>@(user.is_active == true ? "Hoạt động" : "Không hoạt động")</td>
+                    <td>
+                        @Html.ActionLink("Xóa", "DeleteUser", new { id = user.user_id, roleId = Model.Role.role_id }, new { @class = "btn btn-sm btn-danger", onclick = "return confirm('Bạn có chắc chắn muốn xóa người dùng này không?');" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Không có người dùng nào thuộc vai trò này.</p>
+}
+
+<p>
+    @Html.ActionLink("➕ Thêm người dùng", "CreateUser", new { roleId = Model.Role.role_id }, new { @class = "btn btn-primary" }) |
+    @Html.ActionLink("⬅ Quay lại danh sách vai trò", "Index", null, new { @class = "btn btn-secondary" })
+</p>

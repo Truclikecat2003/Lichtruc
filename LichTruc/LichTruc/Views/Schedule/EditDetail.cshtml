@@ -1,0 +1,38 @@
+﻿@model LichTruc.Models.SCHEDULE_DETAIL
+
+@{
+    ViewBag.Title = "Sửa ca trực";
+    var schedule = ViewBag.Schedule as LichTruc.Models.SCHEDULE;
+}
+
+<h2>Sửa ca trực</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.detail_id)
+    @Html.HiddenFor(m => m.schedule_id)
+
+    <div class="form-group">
+        @Html.Label("Ngày trực")
+        <input type="text" class="form-control" value="@Model.duty_date.ToString("dd/MM/yyyy")" readonly />
+    </div>
+
+    <div class="form-group">
+        @Html.Label("Ca trực")
+        <input type="text" class="form-control" value="@Model.shift_time" readonly />
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.emp_id, "Bác sĩ phụ trách")
+        @Html.DropDownListFor(m => m.emp_id, (SelectList)ViewBag.EmployeeList, "Chọn bác sĩ", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.duty_type, "Loại trực")
+        @Html.TextBoxFor(m => m.duty_type, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Lưu</button>
+    <a href="@Url.Action("Details", "Schedule", new { id = Model.schedule_id })" class="btn btn-secondary mt-2">Hủy</a>
+}

@@ -1,0 +1,30 @@
+﻿@model LichTruc.Models.DEPARTMENT
+
+@{
+    ViewBag.Title = "Sửa phòng ban";
+}
+
+<h2>Sửa phòng ban</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label>Mã phòng</label>
+        @Html.TextBoxFor(m => m.dept_code, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Tên phòng</label>
+        @Html.TextBoxFor(m => m.dept_name, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Mã phòng cha (nếu có)</label>
+        @Html.TextBoxFor(m => m.parent_dept_id, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Trạng thái</label>
+        @Html.CheckBox("is_active", Model.is_active ?? false)
+    </div>
+    <button type="submit" class="btn btn-success">Lưu</button>
+    @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-secondary" })
+}

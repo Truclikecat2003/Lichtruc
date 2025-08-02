@@ -1,0 +1,31 @@
+﻿@model LichTruc.Models.EMPLOYEE
+
+@{
+    ViewBag.Title = "Sửa bác sĩ";
+}
+
+<h2>Sửa thông tin bác sĩ</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.emp_id)
+
+    @Html.LabelFor(m => m.emp_code)
+    @Html.TextBoxFor(m => m.emp_code, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.full_name)
+    @Html.TextBoxFor(m => m.full_name, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.position)
+    @Html.TextBoxFor(m => m.position, new { @class = "form-control" })
+
+    @Html.LabelFor(m => m.dept_id, "Phòng ban")
+    @Html.DropDownListFor(m => m.dept_id, (SelectList)ViewBag.Departments, "-- Chọn phòng ban --", new { @class = "form-control" })
+
+    @Html.Label("Đang hoạt động")
+    @Html.CheckBox("is_active", Model.is_active ?? false)
+
+    <br />
+    <input type="submit" value="Lưu" class="btn btn-primary" />
+    @Html.ActionLink("Quay lại", "Index", null, new { @class = "btn btn-secondary ml-2" })
+}

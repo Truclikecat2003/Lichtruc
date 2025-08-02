@@ -1,0 +1,14 @@
+﻿@model LichTruc.Models.ROLE
+@{
+    ViewBag.Title = "Xóa Vai trò";
+}
+<h2>Xác nhận xóa vai trò</h2>
+<p>Bạn có chắc muốn xóa vai trò: <strong>@Model.role_name</strong>?</p>
+
+@using (Html.BeginForm("Delete", "Role", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.role_id)
+    <button type="submit" class="btn btn-danger">Xóa</button>
+    @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-secondary" })
+}

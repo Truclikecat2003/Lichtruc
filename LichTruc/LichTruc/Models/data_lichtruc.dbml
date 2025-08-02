@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DutyScheduleSystem" Class="data_lichtrucDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.AUDIT_LOGS" Member="AUDIT_LOGs">
+    <Type Name="AUDIT_LOG">
+      <Column Name="log_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="table_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="action_type" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="record_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="old_value" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="new_value" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="action_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="USER_AUDIT_LOG" Member="USER" ThisKey="user_id" OtherKey="user_id" Type="USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DEPARTMENTS" Member="DEPARTMENTs">
+    <Type Name="DEPARTMENT">
+      <Column Name="dept_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="dept_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="dept_code" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="parent_dept_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="DEPARTMENT_DEPARTMENT" Member="DEPARTMENTs" ThisKey="dept_id" OtherKey="parent_dept_id" Type="DEPARTMENT" />
+      <Association Name="DEPARTMENT_EMPLOYEE" Member="EMPLOYEEs" ThisKey="dept_id" OtherKey="dept_id" Type="EMPLOYEE" />
+      <Association Name="DEPARTMENT_SCHEDULE" Member="SCHEDULEs" ThisKey="dept_id" OtherKey="dept_id" Type="SCHEDULE" />
+      <Association Name="DEPARTMENT_USER_DEPARTMENT_ACCESS" Member="USER_DEPARTMENT_ACCESSes" ThisKey="dept_id" OtherKey="dept_id" Type="USER_DEPARTMENT_ACCESS" />
+      <Association Name="DEPARTMENT_USER" Member="USERs" ThisKey="dept_id" OtherKey="primary_dept_id" Type="USER" />
+      <Association Name="DEPARTMENT_DEPARTMENT" Member="DEPARTMENT1" ThisKey="parent_dept_id" OtherKey="dept_id" Type="DEPARTMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EMPLOYEES" Member="EMPLOYEEs">
+    <Type Name="EMPLOYEE">
+      <Column Name="emp_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="emp_code" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="full_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="position" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="has_license" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="dept_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="EMPLOYEE_SCHEDULE_DETAIL" Member="SCHEDULE_DETAILs" ThisKey="emp_id" OtherKey="emp_id" Type="SCHEDULE_DETAIL" />
+      <Association Name="EMPLOYEE_USER" Member="USERs" ThisKey="emp_id" OtherKey="emp_id" Type="USER" />
+      <Association Name="DEPARTMENT_EMPLOYEE" Member="DEPARTMENT" ThisKey="dept_id" OtherKey="dept_id" Type="DEPARTMENT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PERMISSIONS" Member="PERMISSIONs">
+    <Type Name="PERMISSION">
+      <Column Name="permission_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="permission_name" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="permission_description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="module_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="PERMISSION_ROLE_PERMISSION" Member="ROLE_PERMISSIONs" ThisKey="permission_id" OtherKey="permission_id" Type="ROLE_PERMISSION" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROLE_PERMISSIONS" Member="ROLE_PERMISSIONs">
+    <Type Name="ROLE_PERMISSION">
+      <Column Name="role_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="permission_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="PERMISSION_ROLE_PERMISSION" Member="PERMISSION" ThisKey="permission_id" OtherKey="permission_id" Type="PERMISSION" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="ROLE_ROLE_PERMISSION" Member="ROLE" ThisKey="role_id" OtherKey="role_id" Type="ROLE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ROLES" Member="ROLEs">
+    <Type Name="ROLE">
+      <Column Name="role_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="role_name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="role_description" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="ROLE_ROLE_PERMISSION" Member="ROLE_PERMISSIONs" ThisKey="role_id" OtherKey="role_id" Type="ROLE_PERMISSION" />
+      <Association Name="ROLE_USER" Member="USERs" ThisKey="role_id" OtherKey="role_id" Type="USER" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SCHEDULE_DETAILS" Member="SCHEDULE_DETAILs">
+    <Type Name="SCHEDULE_DETAIL">
+      <Column Name="detail_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="schedule_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="duty_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="shift_time" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="duty_type" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="is_visible" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="EMPLOYEE_SCHEDULE_DETAIL" Member="EMPLOYEE" ThisKey="emp_id" OtherKey="emp_id" Type="EMPLOYEE" IsForeignKey="true" />
+      <Association Name="SCHEDULE_SCHEDULE_DETAIL" Member="SCHEDULE" ThisKey="schedule_id" OtherKey="schedule_id" Type="SCHEDULE" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SCHEDULES" Member="SCHEDULEs">
+    <Type Name="SCHEDULE">
+      <Column Name="schedule_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="week_start_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="week_end_date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="status" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="created_by" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="approved_by" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="locked_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="approved_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="dept_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="notes" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="SCHEDULE_SCHEDULE_DETAIL" Member="SCHEDULE_DETAILs" ThisKey="schedule_id" OtherKey="schedule_id" Type="SCHEDULE_DETAIL" />
+      <Association Name="DEPARTMENT_SCHEDULE" Member="DEPARTMENT" ThisKey="dept_id" OtherKey="dept_id" Type="DEPARTMENT" IsForeignKey="true" />
+      <Association Name="USER_SCHEDULE" Member="USER" ThisKey="approved_by" OtherKey="user_id" Type="USER" IsForeignKey="true" />
+      <Association Name="USER_SCHEDULE1" Member="USER1" ThisKey="created_by" OtherKey="user_id" Type="USER" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USER_DEPARTMENT_ACCESS" Member="USER_DEPARTMENT_ACCESSes">
+    <Type Name="USER_DEPARTMENT_ACCESS">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dept_id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="access_type" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="DEPARTMENT_USER_DEPARTMENT_ACCESS" Member="DEPARTMENT" ThisKey="dept_id" OtherKey="dept_id" Type="DEPARTMENT" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+      <Association Name="USER_USER_DEPARTMENT_ACCESS" Member="USER" ThisKey="user_id" OtherKey="user_id" Type="USER" IsForeignKey="true" DeleteRule="CASCADE" DeleteOnNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.USERS" Member="USERs">
+    <Type Name="USER">
+      <Column Name="user_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="password" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="emp_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="role_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="primary_dept_id" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="is_active" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="last_login" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="created_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Column Name="modified_date" Type="System.DateTime" DbType="DateTime2" CanBeNull="true" />
+      <Association Name="USER_AUDIT_LOG" Member="AUDIT_LOGs" ThisKey="user_id" OtherKey="user_id" Type="AUDIT_LOG" />
+      <Association Name="USER_SCHEDULE" Member="SCHEDULEs" ThisKey="user_id" OtherKey="approved_by" Type="SCHEDULE" />
+      <Association Name="USER_SCHEDULE1" Member="SCHEDULEs1" ThisKey="user_id" OtherKey="created_by" Type="SCHEDULE" />
+      <Association Name="USER_USER_DEPARTMENT_ACCESS" Member="USER_DEPARTMENT_ACCESSes" ThisKey="user_id" OtherKey="user_id" Type="USER_DEPARTMENT_ACCESS" />
+      <Association Name="DEPARTMENT_USER" Member="DEPARTMENT" ThisKey="primary_dept_id" OtherKey="dept_id" Type="DEPARTMENT" IsForeignKey="true" />
+      <Association Name="EMPLOYEE_USER" Member="EMPLOYEE" ThisKey="emp_id" OtherKey="emp_id" Type="EMPLOYEE" IsForeignKey="true" />
+      <Association Name="ROLE_USER" Member="ROLE" ThisKey="role_id" OtherKey="role_id" Type="ROLE" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,48 @@
+﻿@model List<LichTruc.Models.SCHEDULE_DETAIL>
+@{
+    var schedules = ViewBag.Schedules as List<LichTruc.Models.SCHEDULE>;
+    var employeeNames = ViewBag.EmployeeNames as Dictionary<int, string>;
+    var departmentNames = ViewBag.DepartmentNames as Dictionary<int, string>;
+}
+
+@foreach (var schedule in schedules)
+{
+    <div class="mb-5">
+        <h4>
+            🏥 <strong>Phòng ban:</strong> @(departmentNames.ContainsKey(schedule.dept_id) ? departmentNames[schedule.dept_id] : "Không rõ")<br />
+            📅 <strong>Tuần:</strong> @schedule.week_start_date.ToString("dd/MM") - @schedule.week_end_date.ToString("dd/MM/yyyy")
+        </h4>
+
+        <table class="table table-bordered table-sm">
+            <thead class="table-light">
+                <tr>
+                    <th>Ngày</th>
+                    <th>Sáng</th>
+                    <th>Chiều</th>
+                    <th>Tối</th>
+                    <th>Cả ngày</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (var day = schedule.week_start_date.Date; day <= schedule.week_end_date.Date; day = day.AddDays(1))
+                {
+                    <tr>
+                        <td>@day.ToString("dd/MM/yyyy")</td>
+                        @foreach (var ca in new[] { "Sáng", "Chiều", "Tối", "Cả ngày" })
+                        {
+                            var list = Model
+                                .Where(d => d.schedule_id == schedule.schedule_id && d.duty_date == day && d.shift_time == ca)
+                                .Select(d =>
+                                    (employeeNames.ContainsKey(d.emp_id) ? employeeNames[d.emp_id] : "N/A") +
+                                    (string.IsNullOrEmpty(d.duty_type) ? "" : $" ({d.duty_type})")
+                                ).ToList();
+
+                            <td>@Html.Raw(string.Join("<br/>", list))</td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <div style="page-break-after: always;"></div>
+    </div>
+}

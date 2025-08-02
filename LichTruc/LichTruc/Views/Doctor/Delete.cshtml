@@ -1,0 +1,19 @@
+﻿@model LichTruc.Models.EMPLOYEE
+
+@{
+    ViewBag.Title = "Xóa bác sĩ";
+}
+
+<h2>Bạn có chắc muốn xóa bác sĩ này?</h2>
+
+<div>
+    <strong>@Model.full_name</strong> - @Model.position
+    <p>Phòng: @Model.DEPARTMENT.dept_name</p>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(m => m.emp_id)
+    <input type="submit" value="Xóa" class="btn btn-danger" />
+    @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-secondary ml-2" })
+}

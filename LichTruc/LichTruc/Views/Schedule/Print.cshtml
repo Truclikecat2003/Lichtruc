@@ -1,0 +1,88 @@
+﻿@model IEnumerable<LichTruc.Models.SCHEDULE_DETAIL>
+
+@{
+    ViewBag.Title = "Lịch trực dạng ma trận";
+    var schedule = ViewBag.Schedule as LichTruc.Models.SCHEDULE;
+    var employeeNames = ViewBag.EmployeeNames as Dictionary<int, string>;
+    var caTrucList = new[] { "Sáng", "Chiều", "Tối", "Cả ngày" }; // ✅ Đã thêm "Cả ngày"
+    Layout = null;
+}
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #000;
+        padding: 6px 8px;
+        vertical-align: top;
+    }
+
+    th {
+        background-color: #f0f0f0;
+        text-align: center;
+    }
+</style>
+
+<h2 style="text-align:center;">LỊCH TRỰC BÁC SĨ</h2>
+<p><strong>Phòng ban:</strong> @ViewBag.DepartmentName</p>
+<p><strong>Thời gian:</strong> @schedule.week_start_date.ToString("dd/MM/yyyy") - @schedule.week_end_date.ToString("dd/MM/yyyy")</p>
+
+@if (ViewBag.IsExport == null || ViewBag.IsExport == false)
+{
+    <div style="margin-bottom: 20px;">
+        <a href="@Url.Action("ExportToPdf", "Schedule", new { id = schedule.schedule_id })" class="btn btn-danger" target="_blank">
+            <i class="bi bi-file-earmark-pdf"></i> Xuất PDF
+        </a>
+        <a href="@Url.Action("ExportToExcel", "Schedule", new { id = schedule.schedule_id })" class="btn btn-success">
+            <i class="bi bi-file-earmark-excel"></i> Xuất Excel
+        </a>
+    </div>
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Ngày</th>
+            @foreach (var ca in caTrucList)
+            {
+                <th>@ca</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var date in Model.Select(d => d.duty_date).Distinct().OrderBy(d => d))
+        {
+            <tr>
+                <td>@date.ToString("dd/MM/yyyy")</td>
+                @foreach (var ca in caTrucList)
+                {
+                    var caTruc = Model
+                        .Where(d => d.duty_date == date && d.shift_time == ca)
+                        .OrderBy(d => d.emp_id)
+                        .ToList();
+
+                    <td>
+                        @if (caTruc.Any())
+                        {
+                            foreach (var duty in caTruc)
+                            {
+                                <div>
+                                    @(employeeNames.ContainsKey(duty.emp_id) ? employeeNames[duty.emp_id] : "Không rõ")
+                                    (@duty.duty_type)
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <span>-</span>
+                        }
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@model LichTruc.Models.SCHEDULE
+
+@{
+    ViewBag.Title = "Xóa lịch trực";
+}
+
+<h2>Bạn có chắc chắn muốn xóa lịch trực này không?</h2>
+
+<div>
+    <p>
+        <strong>Tuần:</strong> @Model.week_start_date.ToShortDateString() – @Model.week_end_date.ToShortDateString() <br />
+        <strong>Phòng ban:</strong> @Model.DEPARTMENT?.dept_name <br />
+        <strong>Trạng thái:</strong> @Model.status
+    </p>
+
+    @using (Html.BeginForm("Delete", "Schedule", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.schedule_id)
+        <input type="submit" value="Xóa" class="btn btn-danger" />
+        @Html.ActionLink("Hủy", "Index", "Home", null, new { @class = "btn btn-secondary ml-2" })
+    }
+</div>

@@ -1,0 +1,153 @@
+﻿@model List<LichTruc.ViewModels.ScheduleEntryVM>
+
+@{
+    ViewBag.Title = "Thêm nhiều bác sĩ vào lịch trực";
+    var schedule = ViewBag.Schedule as LichTruc.Models.SCHEDULE;
+    var shiftOptions = new[] { "Sáng", "Chiều", "Tối", "Cả ngày" };
+    var allDoctors = (MultiSelectList)ViewBag.Employees;
+    string minDate = schedule.week_start_date.ToString("yyyy-MM-dd");
+    string maxDate = schedule.week_end_date.ToString("yyyy-MM-dd");
+}
+
+<h2>Thêm bác sĩ vào lịch trực tuần @schedule.week_start_date.ToShortDateString() - @schedule.week_end_date.ToShortDateString()</h2>
+
+@using (Html.BeginForm("AddDoctor", "Schedule", FormMethod.Post))
+{
+    @Html.Hidden("schedule_id", schedule.schedule_id)
+
+    <div id="entry-container">
+        <div class="entry border p-3 mb-3 position-relative">
+            <div class="form-row">
+                <div class="form-group col-md-2">
+                    <label>Ngày trực</label>
+                    <input type="date" name="entries[0].duty_date" class="form-control" required min="@minDate" max="@maxDate" />
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Ca trực</label>
+                    <select name="entries[0].shift_time" class="form-control">
+                        @foreach (var shift in shiftOptions)
+                        {
+                            <option value="@shift">@shift</option>
+                        }
+                    </select>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Loại trực</label>
+                    <input type="text" name="entries[0].duty_type" class="form-control" required />
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Chọn bác sĩ</label>
+                    <div class="doctor-select-block">
+                        <input type="text" class="form-control mb-1 doctor-search" placeholder="Tìm bác sĩ..." onkeyup="filterDoctors(this)">
+                        <select name="entries[0].emp_ids" class="form-control doctor-select" multiple onchange="updateSelectedList(this)">
+                            @foreach (var doctor in allDoctors)
+                            {
+                                <option value="@doctor.Value">@doctor.Text</option>
+                            }
+                        </select>
+                        <small>Giữ Ctrl để chọn nhiều</small>
+                        <div class="mt-2">
+                            <strong>Đã chọn:</strong>
+                            <ul class="selected-list list-unstyled mb-0"></ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Ghi chú</label>
+                    <input type="text" name="entries[0].notes" class="form-control" />
+                </div>
+            </div>
+            <button type="button" class="btn btn-sm btn-danger position-absolute" style="top: 0; right: 0;" onclick="removeEntry(this)">Xóa</button>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-secondary" onclick="addEntry()">+ Thêm ca trực</button>
+    <br />
+    <br />
+    <button type="submit" class="btn btn-primary">Lưu tất cả</button>
+    @Html.ActionLink("Quay lại", "Details", new { id = schedule.schedule_id }, new { @class = "btn btn-secondary ml-2" })
+}
+
+@section Scripts {
+    <script>
+        let index = 1;
+        const shiftOptions = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(shiftOptions));
+        const doctors = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(
+            ((MultiSelectList)ViewBag.Employees).Select(e => new { e.Value, e.Text })));
+        const minDate = "@minDate";
+        const maxDate = "@maxDate";
+
+        function addEntry() {
+            const container = document.getElementById("entry-container");
+            const div = document.createElement("div");
+            div.className = "entry border p-3 mb-3 position-relative";
+
+            div.innerHTML = `
+                <div class="form-row">
+                    <div class="form-group col-md-2">
+                        <label>Ngày trực</label>
+                        <input type="date" name="entries[${index}].duty_date" class="form-control" required min="${minDate}" max="${maxDate}" />
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Ca trực</label>
+                        <select name="entries[${index}].shift_time" class="form-control">
+                            ${shiftOptions.map(s => `<option value="${s}">${s}</option>`).join("")}
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Loại trực</label>
+                        <input type="text" name="entries[${index}].duty_type" class="form-control" required />
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Chọn bác sĩ</label>
+                        <div class="doctor-select-block">
+                            <input type="text" class="form-control mb-1 doctor-search" placeholder="Tìm bác sĩ..." onkeyup="filterDoctors(this)">
+                            <select name="entries[${index}].emp_ids" class="form-control doctor-select" multiple onchange="updateSelectedList(this)">
+                                ${doctors.map(d => `<option value="${d.Value}">${d.Text}</option>`).join("")}
+                            </select>
+                            <small>Giữ Ctrl để chọn nhiều</small>
+                            <div class="mt-2">
+                                <strong>Đã chọn:</strong>
+                                <ul class="selected-list list-unstyled mb-0"></ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label>Ghi chú</label>
+                        <input type="text" name="entries[${index}].notes" class="form-control" />
+                    </div>
+                </div>
+                <button type="button" class="btn btn-sm btn-danger position-absolute" style="top: 0; right: 0;" onclick="removeEntry(this)">Xóa</button>
+            `;
+
+            container.appendChild(div);
+            index++;
+        }
+
+        function removeEntry(button) {
+            const entryDiv = button.closest(".entry");
+            entryDiv.remove();
+        }
+
+        function filterDoctors(input) {
+            const block = input.closest(".doctor-select-block");
+            const select = block.querySelector(".doctor-select");
+            const filter = input.value.toLowerCase();
+            for (const option of select.options) {
+                const text = option.text.toLowerCase();
+                option.style.display = text.includes(filter) ? "" : "none";
+            }
+        }
+
+        function updateSelectedList(select) {
+            const block = select.closest(".doctor-select-block");
+            const list = block.querySelector(".selected-list");
+            list.innerHTML = "";
+            for (const option of select.selectedOptions) {
+                const li = document.createElement("li");
+                li.textContent = option.text;
+                list.appendChild(li);
+            }
+        }
+    </script>
+}
