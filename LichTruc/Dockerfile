@@ -1,20 +1,23 @@
-# Stage 1: Build
+# ======== BUILD IMAGE ========
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copy toàn bộ thư mục hiện tại (vì đã chứa .sln và project con)
-COPY . .
+# Copy solution và csproj trước để tận dụng cache
+COPY LichTruc.sln .
+COPY LichTruc/*.csproj ./LichTruc/
 
-# Khôi phục từ file .sln
+# Restore dependencies
 RUN dotnet restore LichTruc.sln
+
+# Copy toàn bộ mã nguồn sau restore
+COPY . .
 
 # Build & publish
 WORKDIR /src/LichTruc
 RUN dotnet publish -c Release -o /app/publish
 
-# Stage 2: Run
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# ======== RUNTIME IMAGE ========
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
 COPY --from=build /app/publish .
-EXPOSE 80
 ENTRYPOINT ["dotnet", "LichTruc.dll"]
